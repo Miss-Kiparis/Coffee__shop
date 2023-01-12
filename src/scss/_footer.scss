@@ -50,9 +50,12 @@ justify-content: center;
 
 
 .email__item {
-    min-width: 250px;
+    width: 250px;
     padding: 10px 25px;
     border: 1px solid #fff;
+    @include _320px {
+        width: 100%;
+    }
 
 }
 
@@ -67,6 +70,10 @@ justify-content: center;
         top: 15px;
         left: 20px;
     }
+}
+
+.submitStatus {
+    display: none;
 }
 
 .socials {

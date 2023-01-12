@@ -22,6 +22,7 @@
     display: flex;
     justify-content: flex-end;
     width: inherit;
+    position: relative;
 }
 
 .burger {
@@ -58,28 +59,6 @@ top: 8px;
 
 .listMenu {
     display: none;
-
-    // to do 
-
-    // @include _320px {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: space-around;
-    //     color: #fff;
-    //     background: rgba(0, 0, 0, 0.8);
-    //     position: fixed;
-    //     top: 0;
-    //     right: 125px;
-    //     padding: 35px 0;
-    //     bottom: 0;
-    //     z-index: 998;
-    //     width: 260px;
-    //     overflow-y: auto;
-    //     transition: 0.4s;
-    //     // padding-left: 0;
-    //     list-style: none;
-    // }
-
     @include _1200px {
     margin: 0;
     display: inherit;
@@ -89,6 +68,41 @@ top: 8px;
     list-style: none;
    }}
 }
+
+// for tablet + mobile class
+.showMenu {
+    display: block;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.910);
+    list-style: none;
+    position: fixed;
+    left: 0;
+    top: -16px;
+    padding: 55px 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 260px;
+
+    & > li {
+    padding: 10px;
+    }  
+}
+
+.showCross {
+    .bar2 {
+      opacity: 0;
+    }
+    .bar3 {
+      top: 12px;
+      transform: translateY(-200%) rotate(45deg);
+    }
+    .bar1 {
+      top: -2px;
+      transform: translateY(275%) rotate(-45deg);
+    }
+  }
+
+// for tablet + mobile class end
 
 .item__link {
     padding-left: 22px;
