@@ -34,3 +34,18 @@ document.addEventListener("keydown", function (el) {
     burger.classList.remove("showCross");
   }
 });
+
+//  fixed menu on scroll desctop
+
+// function controlScroll() {
+//   document.addEventListener("scroll", () => {
+//     let heightScrollWindow = window.pageYOffset;
+//     let page = document.querySelector(".menu__container");
+//     if (heightScrollWindow >= 40) {
+//       page.classList.add("scrollpage");
+//     }
+//     console.log("heightWindow", heightScrollWindow);
+//   });
+// }
+
+// controlScroll();

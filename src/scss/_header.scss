@@ -1,6 +1,7 @@
  .menu__container {
     width: inherit;
     height: 85px;
+    // position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,6 +9,11 @@
     flex-wrap: nowrap;
  
   }
+
+  // .scrollpage {
+  //   background: rgba(20, 2, 0, 0.8);
+  //   transition: all 0.5s;
+  // }
 
   .mini__wrapper {
     flex-wrap: wrap;
