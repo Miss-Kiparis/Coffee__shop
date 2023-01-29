@@ -35,17 +35,46 @@ document.addEventListener("keydown", function (el) {
   }
 });
 
-//  fixed menu on scroll desctop
+//  running numbers
 
-// function controlScroll() {
-//   document.addEventListener("scroll", () => {
-//     let heightScrollWindow = window.pageYOffset;
-//     let page = document.querySelector(".menu__container");
-//     if (heightScrollWindow >= 40) {
-//       page.classList.add("scrollpage");
-//     }
-//     console.log("heightWindow", heightScrollWindow);
-//   });
-// }
+let valueDisplays = document.querySelectorAll(".number__item");
+let interval = 1000;
 
-// controlScroll();
+console.log(valueDisplays);
+
+let shouldTsypherkyStart = true;
+
+function tsypherky() {
+  valueDisplays.forEach((valueDisplay) => {
+    let startValue = 0;
+    let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+    let duration = Math.floor(interval / endValue);
+    let counter = setInterval(function () {
+      startValue += 1;
+      valueDisplay.textContent = startValue;
+      if (startValue == endValue) {
+        clearInterval(counter);
+      }
+    }, duration);
+  });
+  shouldTsypherkyStart = false;
+}
+
+function controllScroll() {
+  document.addEventListener("scroll", () => {
+    const heightScrollWindow = window.pageYOffset;
+    const pages = document.querySelectorAll(".page");
+    pages.forEach((item, index) => {
+      let point = item.clientHeight * index;
+      heightScrollWindow >= point
+        ? item.classList.add("init")
+        : item.classList.remove("init");
+    });
+    console.log("heightWindow is:", heightScrollWindow);
+    if (heightScrollWindow > 3204 && shouldTsypherkyStart) {
+      tsypherky();
+    }
+  });
+}
+
+controllScroll();
