@@ -1,0 +1,88 @@
+.page__body {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  color: #fff;
+}
+
+// header part + container
+
+.page__header {
+  width: 100%;
+  background-image: url("../img/headerBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 920px;
+&--container {
+max-width: 1150px;
+margin: 0 auto;
+padding: 25px;
+}
+}
+
+// main part + all it'ds containers\ huge sections
+
+.page__main {
+  width: 100%;
+&--container__about {
+  @include _768px {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@include _320px {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  @include indent;
+  display: flex;
+  justify-content: space-around;
+}
+
+&--container__coffee {
+  background-image: url("../img/menuBg.jpg");
+  width: 100%;
+  margin: 100px auto 0;
+  padding: 55px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+&--gallery__container {
+  
+  @include indent;
+  padding-top: 55px;
+}
+
+&--review {
+  background-color: #b68834;
+  width: 100%;
+  padding: 55px 0;
+  margin: 0 auto;
+}
+
+&--blog {
+  @include indent;
+  padding-top: 35px;
+}
+}
+
+// footer page
+
+.page__footer {
+  width: 100%;
+  background: url("../img/footerBg.jpg") center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+
+  &--container {
+    max-width: 1150px;
+    margin: 80px auto 0;
+    padding: 150px 20px 0;
+    color: #fff;
+  }
+
+}

@@ -1,0 +1,37 @@
+// @mixin font-params($weight,$size,$height,$color,$align, $transform:"") {
+//   font-weight: $weight;
+//   font-size: $size;
+//   line-height: $height;
+//   color: $color;
+//   text-align: $align;
+//   text-transform: unquote($transform);
+// }
+
+// @mixin _small_screens {
+//   @media (min-width: 1150px) {
+//     @content;
+//   }
+// }
+
+@mixin _1200px {
+  @media (min-width: 993px) {
+    @content;
+  }
+}
+
+@mixin _768px {
+  @media (min-width: 481px) and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin _320px {
+  @media (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin indent {
+  max-width: 1150px;
+  margin: 35px auto 0;
+}

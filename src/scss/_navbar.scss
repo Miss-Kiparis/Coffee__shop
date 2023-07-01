@@ -1,0 +1,117 @@
+.workHours__info {
+        display: none;
+
+    @include _1200px {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+&--item{
+    margin: 0;
+    padding-left: 22px;
+    font-size: 14px;
+}
+&--info__tel {
+    text-decoration: none;
+    color: #fff;
+}
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    width: inherit;
+    position: relative;
+}
+
+.burger {
+    @include _1200px {
+        display: none;
+    }
+    width: 26px;
+    height: 21px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+
+}
+
+
+.bar1 {
+top: 16px;
+}
+.bar2 {
+top: 8px;
+  
+}
+
+.burger__bar {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 26px;
+    height: 3px;
+}
+
+
+.listMenu {
+    display: none;
+    @include _1200px {
+    margin: 0;
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+   &--item {
+    list-style: none;
+   }}
+}
+
+// for tablet + mobile class
+.showMenu {
+    display: block;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.910);
+    list-style: none;
+    position: fixed;
+    left: 0;
+    top: -16px;
+    padding: 55px 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 260px;
+
+    & > li {
+    padding: 10px;
+    }  
+}
+
+.showCross {
+    .bar2 {
+      opacity: 0;
+    }
+    .bar3 {
+      top: 12px;
+      transform: translateY(-200%) rotate(45deg);
+    }
+    .bar1 {
+      top: -2px;
+      transform: translateY(275%) rotate(-45deg);
+    }
+  }
+
+// for tablet + mobile class end
+
+.item__link {
+    padding-left: 22px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    &:hover {
+        color: #e6c799;
+        transition: 0.2s linear;
+    }
+}
