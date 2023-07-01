@@ -8,9 +8,6 @@ document.addEventListener("click", function (e) {
     e.target.className !== "item__link"
   ) {
     burger.classList.remove("showCross");
-
-    // dropDown.style.cssText = `@media (min-width: 993px) {
-    //     display: none;}`;
     dropDown.classList.remove("showMenu");
   }
 });
@@ -40,11 +37,9 @@ document.addEventListener("keydown", function (el) {
 let valueDisplays = document.querySelectorAll(".number__item");
 let interval = 1000;
 
-console.log(valueDisplays);
+let shouldRunningNumbersStart = true;
 
-let shouldTsypherkyStart = true;
-
-function tsypherky() {
+function runningNumbers() {
   valueDisplays.forEach((valueDisplay) => {
     let startValue = 0;
     let endValue = parseInt(valueDisplay.getAttribute("data-val"));
@@ -57,7 +52,7 @@ function tsypherky() {
       }
     }, duration);
   });
-  shouldTsypherkyStart = false;
+  shouldRunningNumbersStart = false;
 }
 
 function controllScroll() {
@@ -70,9 +65,8 @@ function controllScroll() {
         ? item.classList.add("init")
         : item.classList.remove("init");
     });
-    console.log("heightWindow is:", heightScrollWindow);
-    if (heightScrollWindow > 3204 && shouldTsypherkyStart) {
-      tsypherky();
+    if (heightScrollWindow > 3204 && shouldRunningNumbersStart) {
+      runningNumbers();
     }
   });
 }
